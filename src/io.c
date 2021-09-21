@@ -7,7 +7,7 @@ char* jcbc_fgets(char* s, int size, FILE* stream)
     char* r = fgets(s, size, stream);
     if (r) {
         int i = 0;
-        while (s[i] != '\n' && i < size) {
+        while (i < size && s[i] != '\n') {
             ++i;
         }
         if (i < size) {
