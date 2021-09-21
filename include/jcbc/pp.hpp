@@ -8,4 +8,7 @@
         const T& raw() const { return *this; }               \
     }
 
+// Safer (type wise) counting of array size (of course, only in the same or sub scope)
+#define COUNT_OF(x) ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
+
 #endif // JCBC_PP_HPP_
